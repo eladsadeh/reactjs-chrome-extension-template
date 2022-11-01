@@ -30,10 +30,14 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     'style-loader',
+                    // "css-modules-typescript-loader",
                     {
                         loader: 'css-loader',
                         options: {
-                          importLoaders: 1,
+                            modules: {
+                                auto: true,
+                                localIdentName: "[name]__[local]--[hash:base64:5]",
+                            },
                         },
                     }
                 ],
