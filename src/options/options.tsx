@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/tailwind.css'
+import '../assets/style.css'
 import { createRoot } from 'react-dom/client'
 
 const test = (
