@@ -1,9 +1,6 @@
-# ReactJS Chrome Extension
+# ReactJS Chrome Extension Template
 
-## React 18 and TailwindCSS Supported
+based on manshu/reactjs-chrome-extension.
 
-- [x] Webpack Compatible
-- [x] TailwindCSS 3.0 Compatible
-
-Subscribe to my youtube channel
-https://bit.ly/manshu
+- Use react and webpach to generate all the extension files
+- Use CSS modules for styling
