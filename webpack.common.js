@@ -16,7 +16,7 @@ module.exports = {
         popup: path.resolve('src/popup/index.tsx'),
         options: path.resolve('src/options/options.tsx'),
         background: path.resolve('src/background/background.ts'),
-        contentScript: path.resolve('src/contentScript/contentScript.ts'),
+        contentScript: path.resolve('src/contentScript/index.tsx'),
         newTab: path.resolve('src/tabs/index.tsx')
     },
     module: {
@@ -73,7 +73,9 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: 'all',
+            chunks(chunk) {
+                return chunk.name !== 'contentScript';
+            }
         }
     }
 }
