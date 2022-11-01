@@ -1,12 +1,12 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
+import Home from '../popup/components/Home';
+import About from '../popup/components/About';
 
-const Popup = () => {
+const Tabs = () => {
    return (
       <div>
-         <h2>Popup Page</h2>
+         <h2>Tabs Page</h2>
          <ul>
             <li>
                 <a href='#/about'>About</a>
@@ -23,5 +23,4 @@ const Popup = () => {
    );
 };
 
-export default Popup;
-
+export default Tabs;

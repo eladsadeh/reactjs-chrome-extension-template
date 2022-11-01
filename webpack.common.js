@@ -3,14 +3,21 @@ const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const tailwindcss = require('tailwindcss')
-const autoprefixer = require('autoprefixer')
+// const autoprefixer = require('autoprefixer')
+
+const titles = {
+    popup: "Extension Popup",
+    options: "Extension Options",
+    newTab: "New Tab"
+}
 
 module.exports = {
     entry: {
-        popup: path.resolve('src/popup/popup.tsx'),
+        popup: path.resolve('src/popup/index.tsx'),
         options: path.resolve('src/options/options.tsx'),
         background: path.resolve('src/background/background.ts'),
-        contentScript: path.resolve('src/contentScript/contentScript.ts')
+        contentScript: path.resolve('src/contentScript/contentScript.ts'),
+        newTab: path.resolve('src/tabs/index.tsx')
     },
     module: {
         rules: [
@@ -54,6 +61,7 @@ module.exports = {
         ...getHtmlPlugins([
             'popup',
             'options',
+            'newTab'
         ])
     ],
     resolve: {
@@ -72,7 +80,7 @@ module.exports = {
 
 function getHtmlPlugins(chunks){
     return chunks.map(chunk => new HtmlPlugin({
-        title: 'React Extension',
+        title: titles[chunk],
         filename: `${chunk}.html`,
         chunks: [chunk]
     }))
